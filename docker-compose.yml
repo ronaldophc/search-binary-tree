@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  node-problems:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    working_dir: /var/www/
+    tty: true
+    ports:
+      - '3009:3009'
+    expose:
+      - '3009'
+    volumes:
+      - ./:/var/www/
